@@ -17,3 +17,8 @@ class Data:
     def encode(self, text):
         """Convert string to list of integers"""
         return [self.stoi[ch] for ch in text]
+
+    def decode(self, indices):
+        """Convert list of integers to string"""
+        return ''.join([self.itos[i] for i in indices])
+
