@@ -1,3 +1,4 @@
+
 import torch
 
 class Data:
@@ -26,3 +27,10 @@ class Data:
             """Split data into training and validation sets"""
             n = int(len(self.data) * split_ratio)
             return self.data[:n], self.data[n:]
+
+    def get_batch(self, split_data, batch_size, block_size):
+            """Generate a batch of input-output sequences"""
+            ix = torch.randint(len(split_data) - block_size, (batch_size,))
+            x = torch.stack([split_data[i:i+block_size] for i in ix])
+            y = torch.stack([split_data[i+1:i+block_size+1] for i in ix])
+            return x, y
