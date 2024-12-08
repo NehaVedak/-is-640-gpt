@@ -22,3 +22,7 @@ class Data:
         """Convert list of integers to string"""
         return ''.join([self.itos[i] for i in indices])
 
+def get_splits(self, split_ratio=0.9):
+        """Split data into training and validation sets"""
+        n = int(len(self.data) * split_ratio)
+        return self.data[:n], self.data[n:]
