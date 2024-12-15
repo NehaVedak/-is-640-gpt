@@ -11,3 +11,5 @@ class Trainer:
             logits, loss = self.model(xb, yb)
             self.optimizer.zero_grad()
             loss.backward()
+            self.optimizer.step()
+            if iter % 100 == 0:
