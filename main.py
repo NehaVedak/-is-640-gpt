@@ -22,3 +22,6 @@ def main():
     # Initialize model
     model = GPTLanguageModel()
     model.to("cuda" if torch.cuda.is_available() else "cpu")
+    
+    # Optimizer
+    optimizer = torch.optim.AdamW(model.parameters(), lr=learning_rate)
