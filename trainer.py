@@ -9,3 +9,5 @@ class Trainer:
         for iter in range(iterations):
             xb, yb = self.data.get_batch('train', batch_size, block_size)
             logits, loss = self.model(xb, yb)
+            self.optimizer.zero_grad()
+            loss.backward()
