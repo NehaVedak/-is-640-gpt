@@ -25,3 +25,7 @@ def main():
     
     # Optimizer
     optimizer = torch.optim.AdamW(model.parameters(), lr=learning_rate)
+    
+    # Initialize trainer
+    trainer = Trainer(data, model, optimizer)
+
