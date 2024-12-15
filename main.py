@@ -28,4 +28,8 @@ def main():
     
     # Initialize trainer
     trainer = Trainer(data, model, optimizer)
+    
+    # Train model
+    trainer.train(iterations=train_iterations, batch_size=batch_size, block_size=block_size)
+
 
