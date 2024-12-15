@@ -18,3 +18,7 @@ def main():
 
     # Load data
     data = Data(data_file)
+    
+    # Initialize model
+    model = GPTLanguageModel()
+    model.to("cuda" if torch.cuda.is_available() else "cpu")
