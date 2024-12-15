@@ -26,6 +26,11 @@ def main():
     # Optimizer
     optimizer = torch.optim.AdamW(model.parameters(), lr=learning_rate)
     
+    # Generate text
+    context = torch.zeros((1, 1), dtype=torch.long)
+    generated = model.generate(context, max_new_tokens=word_count)
+    print(data.decode(generated[0].tolist()))
+    
     # Initialize trainer
     trainer = Trainer(data, model, optimizer)
     
