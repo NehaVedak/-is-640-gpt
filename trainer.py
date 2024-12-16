@@ -14,4 +14,3 @@ class Trainer:
             self.optimizer.step()
             if iter % 100 == 0:
                 print(f"Step {iter}, Loss: {loss.item()}")
-                 
